@@ -4,17 +4,15 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.radustavila.contactlist.R
 import com.radustavila.contactlist.databinding.ContactItemBinding
 import com.radustavila.contactlist.model.Contact
+import com.radustavila.contactlist.util.URL_RANDOM_PICS
 
-private const val URL_RANDOM_PICS = "https://picsum.photos/200/200"
-
-class ContactAdapter(
-    private val onItemClicked: ((Contact) -> Unit)
-) : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
+class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
 
     var contactList = emptyList<Contact>()
     set(value) {
@@ -61,7 +59,7 @@ class ContactAdapter(
                 }
 
                 root.setOnClickListener {
-                    onItemClicked(contact)
+                    binding.root.findNavController().navigate(ListFragmentDirections.actionListFragmentToDetailFragment(contact))
                 }
             }
         }

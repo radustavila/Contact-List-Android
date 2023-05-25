@@ -1,6 +1,5 @@
 package com.radustavila.contactlist.data
 
-import com.radustavila.contactlist.model.Post
 import com.radustavila.contactlist.network.ContactAPI
 import javax.inject.Inject
 
@@ -14,8 +13,6 @@ class ContactRepositoryImpl @Inject constructor(
         it.status != INACTIVE_STATUS
     }
 
-    override suspend fun getContactPostList(): List<Post> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getContactPostList(userId: String) = contactAPI.getContactPostList(userId)
 
 }

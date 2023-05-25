@@ -7,6 +7,6 @@ interface ContactRepository {
 
     suspend fun getContactList(): List<Contact>
 
-    suspend fun getContactPostList(): List<Post>
+    suspend fun getContactPostList(userId: String): List<Post>
 
 }

@@ -4,4 +4,6 @@
     <string name="list_sub_header_title">CONTACTELE MELE</string>
     <string name="contact_profile_image_content_description">Contact\'s profile image</string>
     <string name="arrow_item_detail_content_description">Arrow to Item Detail</string>
+    <string name="detail_header_title">Detalii Contact</string>
+    <string name="exception">Loading exception %s</string>
 </resources>
