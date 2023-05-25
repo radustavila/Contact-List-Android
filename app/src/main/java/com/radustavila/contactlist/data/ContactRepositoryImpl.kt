@@ -1,15 +1,21 @@
 package com.radustavila.contactlist.data
 
-import com.radustavila.contactlist.model.Contact
 import com.radustavila.contactlist.model.Post
+import com.radustavila.contactlist.network.ContactAPI
+import javax.inject.Inject
 
-class ContactRepositoryImpl : ContactRepository {
+private const val INACTIVE_STATUS = "inactive"
 
-    override suspend fun getContactList(): List<Contact> {
-        TODO("Not yet implemented")
+class ContactRepositoryImpl @Inject constructor(
+    private val contactAPI: ContactAPI
+): ContactRepository {
+
+    override suspend fun getContactList() = contactAPI.getContactList().filter {
+        it.status != INACTIVE_STATUS
     }
 
     override suspend fun getContactPostList(): List<Post> {
         TODO("Not yet implemented")
     }
+
 }

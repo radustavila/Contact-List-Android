@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ContactList</string>
+    <string name="list_header_title">Contacte</string>
+    <string name="list_sub_header_title">CONTACTELE MELE</string>
+    <string name="contact_profile_image_content_description">Contact\'s profile image</string>
+    <string name="arrow_item_detail_content_description">Arrow to Item Detail</string>
 </resources>
